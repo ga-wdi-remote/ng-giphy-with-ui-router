@@ -10,20 +10,16 @@ router.get('/', function(req, res) {
   });
 })
 
+
 router.post('/', function(req, res){
   Gif.create( req.body )
   .then(function(gif) {
     console.log('succces', gif)
 
-    res.json({data: gif})
-    // return Gif.find({}).exec()
+    res.json({
+      data: gif
+    })
   })
-  // .then(function(gifs) {
-  //   console.log(gifs)
-  //   res.json({
-  //     data: gifs
-  //   })
-  // })
 });
 
 router.put('/:id', function(req, res) {

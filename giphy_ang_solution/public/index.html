@@ -10,19 +10,20 @@
   <script src="/scripts/app.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-  <!-- var home = new HomeController  -->
-<body ng-controller="HomeController as home">
+<body ng-controller="HomeController as home" >
     <div ng-controller="GiphyController as giphy">
       <div class="container">
-        <div>
-          <button ng-click="giphy.getGif()" class="get-gif">GET GIF</button>
-          <button ng-click="giphy.saveGif()">SAVE GIF</button>
+        <div >
+          <button ui-sref-active="active" ng-click="giphy.getGif()" class="get-gif">GET GIF</button>
+          <button ng-click="giphy.saveGif(giphy.gifUrl)">SAVE GIF</button>
           <button ng-click="giphy.getSavedGifs()" class="saved-gifs">See Saved Gifs</button>
         </div>
-      </div>
-      <ui-view>
 
-      </ui-view>
+        <ui-view>
+        </ui-view>
+
+      </div>
+
     </div>
   </div>
 </body>
